@@ -15,12 +15,12 @@
   2. rs1 = 100 -> rd = 100 (一般正數)
   3. rs1 = -2147483648 -> rd = -2147483648 (邊界極限 wrap-around)
 - **對應的 RV32IM baseline 片段與指令數**：
-  ```assembly
-  srai t0, a0, 31    # 1
-  xor  a0, a0, t0    # 2
-  sub  a0, a0, t0    # 3
-  ret                # 4 (含控制返回)
-  ```
+```assembly
+srai t0, a0, 31    # 1
+xor  a0, a0, t0    # 2
+sub  a0, a0, t0    # 3
+ret                # 4 (含控制返回)
+```
   對應之 RV32IM baseline 靜態指令數為 `4` 條（核心邏輯 `3` 條 + `ret` `1` 條）。
 
 ### 指令編碼與欄位說明 (R-type Format)
